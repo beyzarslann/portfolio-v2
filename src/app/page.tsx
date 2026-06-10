@@ -1,12 +1,15 @@
+import About from "@/components/sections/About";
+import Experience from "@/components/sections/Experience";
 import TerminalHero from "@/components/TerminalHero";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-start justify-center pt-16 p-8">
-      <div className="flex items-center gap-12">
+    <main className="min-h-screen flex flex-col items-center pt-24 p-8">
+      {/* Hero */}
+      <div className="flex items-start gap-12 w-full max-w-2xl">
         <TerminalHero />
-        <div className="w-40 h-40 rounded-2xl overflow-hidden shrink-0">
+        <div className="w-48 h-48 rounded-2xl overflow-hidden shrink-0">
           <Image
             src="/profil.jpeg"
             alt="Beyza Arslan"
@@ -16,6 +19,9 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <About />
+      <Experience />
     </main>
   );
 }
