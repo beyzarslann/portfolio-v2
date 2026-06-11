@@ -21,7 +21,10 @@ const experiences: Experience[] = [
     date: "Temmuz – Ağustos 2023 · Yaz Stajı",
     description:
       "Java ve Angular ile bir web uygulamasının geliştirilmesinde görev aldım.",
-    link: null,
+    link: {
+      label: "https://github.com/beyzarslann/AlmanUsuluProjesi",
+      url: "https://github.com/beyzarslann/AlmanUsuluProjesi",
+    },
   },
   {
     title: "Bilgisayar Mühendisliği Stajyeri",
@@ -36,7 +39,7 @@ const experiences: Experience[] = [
 
 export default function Experience() {
   return (
-    <section className="w-full max-w-2xl mx-auto px-8 py-12">
+    <section className="w-full max-w-2xl mx-auto px-8 py-6">
       <h2 className="text-white font-mono text-lg mb-8">
         ~ &gt; <span className="text-green-400">iş deneyimi</span>
       </h2>
