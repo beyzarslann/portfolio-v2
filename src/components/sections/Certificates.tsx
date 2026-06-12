@@ -57,7 +57,19 @@ const chunks = (arr: typeof certificates, size: number) =>
 
 export default function Certificates() {
   const [page, setPage] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
   const groups = chunks(certificates, 3);
+
+  const changePage = (newPage: number) => {
+    const dir = newPage > page ? "right" : "left";
+    setDirection(dir);
+    setAnimating(true);
+    setTimeout(() => {
+      setPage(newPage);
+      setAnimating(false);
+    }, 250);
+  };
 
   return (
     <section className="w-full max-w-2xl mx-auto px-8 py-6">
@@ -65,7 +77,16 @@ export default function Certificates() {
         ~ &gt; <span className="text-green-400">sertifikalarım</span>
       </h2>
 
-      <div className="flex flex-col gap-3">
+      <div
+        className="flex flex-col gap-3 transition-all duration-250"
+        style={{
+          opacity: animating ? 0 : 1,
+          transform: animating
+            ? `translateX(${direction === "right" ? "-20px" : "20px"})`
+            : "translateX(0)",
+          transition: "opacity 0.25s ease, transform 0.25s ease",
+        }}
+      >
         {groups[page].map((cert, i) => (
           <a
             key={i}
@@ -87,10 +108,9 @@ export default function Certificates() {
         ))}
       </div>
 
-      {/* Sayfa geçişi */}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
-          onClick={() => setPage((p) => Math.max(0, p - 1))}
+          onClick={() => changePage(Math.max(0, page - 1))}
           disabled={page === 0}
           className="text-gray-400 hover:text-white disabled:opacity-30 font-mono text-sm"
         >
@@ -100,7 +120,7 @@ export default function Certificates() {
           {page + 1} / {groups.length}
         </span>
         <button
-          onClick={() => setPage((p) => Math.min(groups.length - 1, p + 1))}
+          onClick={() => changePage(Math.min(groups.length - 1, page + 1))}
           disabled={page === groups.length - 1}
           className="text-gray-400 hover:text-white disabled:opacity-30 font-mono text-sm"
         >
