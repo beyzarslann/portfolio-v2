@@ -1,9 +1,12 @@
 import About from "@/components/sections/About";
 import Certificates from "@/components/sections/Certificates";
+import Contact from "@/components/sections/Contact";
 import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
 import TerminalHero from "@/components/TerminalHero";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 import Image from "next/image";
 
 export default function Home() {
@@ -24,13 +27,8 @@ export default function Home() {
       </div>
 
       {/* CV Butonu */}
-      <a
-        href="/BEYZA_ARSLAN_CV.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="animate-bounce mt-6 inline-flex items-center gap-2 text-green-400 font-mono text-sm border border-green-400 rounded-full px-5 py-2 hover:bg-green-400 hover:text-black transition-colors"
-      >
-        {"↓ CV'mi Görüntüle"}
+      <a href="/BEYZA_ARSLAN_CV.pdf" target="_blank" rel="noopener noreferrer">
+        <ShimmerButton className="mt-6">{"↓ CV'mi Görüntüle"}</ShimmerButton>
       </a>
 
       <About />
@@ -38,6 +36,7 @@ export default function Home() {
       <Education />
       <Projects />
       <Certificates />
+      <Skills />
     </main>
   );
 }
