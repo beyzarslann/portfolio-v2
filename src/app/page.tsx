@@ -13,15 +13,15 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center pt-16 p-8">
       {/* Hero */}
-      <div className="flex items-center gap-12 w-full max-w-2xl">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full max-w-2xl">
         <TerminalHero />
-        <div className="w-48 h-48 rounded-2xl overflow-hidden shrink-0">
+        <div className="w-44 h-44 rounded-2xl overflow-hidden shrink-0">
           <Image
             src="/profil.jpeg"
             alt="Beyza Arslan"
-            width={192}
-            height={192}
-            className="w-full h-full object-cover"
+            width={176}
+            height={176}
+            className="w-full h-full object-cover object-top"
           />
         </div>
       </div>

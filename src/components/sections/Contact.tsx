@@ -30,7 +30,7 @@ const links = [
   },
   { label: "E-posta", icon: FaEnvelope, href: "mailto:beyzarslan@gmail.com" },
   { label: "Telefon", icon: FaPhone, href: "tel:+905xxxxxxxxx" },
-  { label: "Bionluk", icon: FaLink, href: "https://bionluk.com/beyzarslan" },
+  { label: "Bionluk", icon: FaLink, href: "https://bionluk.com/beyzarslannn" },
 ];
 
 export default function Contact() {
