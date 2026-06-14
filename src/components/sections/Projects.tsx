@@ -73,7 +73,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="w-full max-w-2xl mx-auto px-8 py-6">
+    <section className="w-full max-w-2xl mx-auto px-12 sm:px-8 py-6">
       <h2 className="text-white font-mono text-lg mb-8">
         ~ &gt; <span className="text-green-400">projelerim</span>
       </h2>
