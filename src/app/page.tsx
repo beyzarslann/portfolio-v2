@@ -8,6 +8,7 @@ import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
+import TerminalSection from "@/components/sections/Terminal";
 import TerminalHero from "@/components/TerminalHero";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { motion } from "motion/react";
@@ -43,7 +44,7 @@ export default function Home() {
         <CvButton />
       </motion.div>
 
-      {[About, Experience, Education, Projects, Certificates, Skills].map(
+      {[About, Experience, Education, Projects, Certificates, Skills, TerminalSection].map(
         (Section, i) => (
           <motion.div
             key={i}
