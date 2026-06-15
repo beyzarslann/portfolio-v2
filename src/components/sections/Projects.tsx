@@ -74,8 +74,9 @@ const projects = [
 export default function Projects() {
   return (
     <section className="w-full max-w-2xl mx-auto px-12 sm:px-8 py-6">
-      <h2 className="text-white font-mono text-lg mb-8">
-        ~ &gt; <span className="text-green-400">projelerim</span>
+      <h2 className="text-foreground font-mono text-lg mb-4">
+        ~ &gt;{" "}
+        <span className="text-green-500 dark:text-green-400">projelerim</span>
       </h2>
 
       <Carousel
@@ -89,7 +90,7 @@ export default function Projects() {
               key={i}
               className="basis-4/5 sm:basis-1/2 transition-all duration-300 opacity-50 scale-90 [&.is-snapped]:opacity-100 [&.is-snapped]:scale-100"
             >
-              <div className="bg-[#1e1e2e] rounded-xl overflow-hidden h-full flex flex-col">
+              <div className="bg-gray-100 dark:bg-[#1e1e2e] border border-gray-500 dark:border-white/10 rounded-xl overflow-hidden h-full flex flex-col">
                 <div className="w-full h-32 overflow-hidden">
                   <img
                     src={project.image}
@@ -98,7 +99,7 @@ export default function Projects() {
                   />
                 </div>
                 <div className="p-4 flex flex-col gap-2 flex-1">
-                  <h3 className="text-white font-semibold text-sm">
+                  <h3 className="text-foreground font-semibold text-sm">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 text-xs leading-relaxed flex-1 line-clamp-2">
@@ -108,7 +109,7 @@ export default function Projects() {
                     {project.tags.slice(0, 3).map((tag, j) => (
                       <span
                         key={j}
-                        className="text-xs px-2 py-0.5 rounded-full bg-gray-800 text-gray-300"
+                        className="text-xs px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
                       >
                         {tag}
                       </span>
@@ -120,7 +121,7 @@ export default function Projects() {
                         href={project.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-green-400 text-xs hover:underline"
+                        className="text-green-500 dark:text-green-400 text-xs hover:underline"
                       >
                         → Website
                       </a>
@@ -139,8 +140,8 @@ export default function Projects() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="text-white border-gray-700 hover:bg-gray-800" />
-        <CarouselNext className="text-white border-gray-700 hover:bg-gray-800" />
+        <CarouselPrevious className="text-foreground border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800" />
+        <CarouselNext className="text-foreground border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800" />
       </Carousel>
     </section>
   );

@@ -45,7 +45,7 @@ export default function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-green-400 transition-colors"
+                  className="text-foreground hover:text-green-500 dark:hover:text-green-400 transition-colors"
                 >
                   <link.icon className="size-6" />
                 </a>

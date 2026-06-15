@@ -40,20 +40,27 @@ const experiences: Experience[] = [
 export default function Experience() {
   return (
     <section className="w-full max-w-2xl mx-auto px-4 sm:px-8 py-6">
-      <h2 className="text-white font-mono text-lg mb-8">
-        ~ &gt; <span className="text-green-400">iş deneyimi</span>
+      <h2 className="text-foreground font-mono text-lg mb-4">
+        ~ &gt;{" "}
+        <span className="text-green-500 dark:text-green-400">iş deneyimi</span>
       </h2>
 
       <div className="relative">
-        <div className="absolute left-2 top-0 bottom-0 w-px bg-gray-700" />
+        <div className="absolute left-2 top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-700" />
         <div className="flex flex-col gap-8">
           {experiences.map((exp, i) => (
             <div key={i} className="relative pl-10">
-              <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0a0a0a]" />
-              <p className="text-gray-500 text-xs font-mono mb-1">{exp.date}</p>
-              <h3 className="text-white font-semibold text-sm">{exp.title}</h3>
-              <p className="text-gray-400 text-sm mb-2">{exp.company}</p>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-green-400 border-2 border-white dark:border-[#0a0a0a]" />
+              <p className="text-gray-500 dark:text-gray-500 text-xs font-mono mb-1">
+                {exp.date}
+              </p>
+              <h3 className="text-foreground font-semibold text-sm">
+                {exp.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                {exp.company}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                 {exp.description}
               </p>
               {exp.link && (
@@ -61,7 +68,7 @@ export default function Experience() {
                   href={exp.link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-400 text-xs hover:underline mt-1 inline-block"
+                  className="text-green-500 dark:text-green-400 text-xs hover:underline mt-1 inline-block"
                 >
                   → {exp.link.label}
                 </a>

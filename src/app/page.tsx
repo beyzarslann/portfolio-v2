@@ -1,3 +1,6 @@
+"use client";
+
+import { CvButton } from "@/components/CvButton";
 import About from "@/components/sections/About";
 import Certificates from "@/components/sections/Certificates";
 import Contact from "@/components/sections/Contact";
@@ -7,38 +10,53 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import TerminalHero from "@/components/TerminalHero";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { motion } from "motion/react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     <main className="min-h-screen flex flex-col items-center p-4 pt-12 sm:p-8 sm:pt-16">
       {/* Hero */}
-      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full max-w-2xl">
-        <div className="w-full md:flex-1">
+      <div className="w-full flex justify-center">
+        <motion.div
+          className="w-full max-w-xl"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <TerminalHero />
-        </div>
-        <div className="w-44 h-44 rounded-2xl overflow-hidden shrink-0 mx-auto md:mx-0">
-          <Image
-            src="/profil.jpeg"
-            alt="Beyza Arslan"
-            width={176}
-            height={176}
-            className="w-full h-full object-cover "
-          />
-        </div>
+        </motion.div>
       </div>
 
       {/* CV Butonu */}
-      <a href="/BEYZA_ARSLAN_CV.pdf" target="_blank" rel="noopener noreferrer">
-        <ShimmerButton className="mt-6">{"↓ CV'mi Görüntüle"}</ShimmerButton>
-      </a>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+      >
+        <CvButton />
+      </motion.div>
 
-      <About />
-      <Experience />
-      <Education />
-      <Projects />
-      <Certificates />
-      <Skills />
+      {[About, Experience, Education, Projects, Certificates, Skills].map(
+        (Section, i) => (
+          <motion.div
+            key={i}
+            className="w-full"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <Section />
+          </motion.div>
+        ),
+      )}
     </main>
   );
 }

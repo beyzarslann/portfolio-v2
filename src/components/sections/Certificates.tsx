@@ -53,8 +53,11 @@ const certificates = [
 export default function Certificates() {
   return (
     <section className="w-full max-w-2xl mx-auto px-4 sm:px-8 py-6">
-      <h2 className="text-white font-mono text-lg mb-4">
-        ~ &gt; <span className="text-green-400">sertifikalarım</span>
+      <h2 className="text-foreground font-mono text-lg mb-4">
+        ~ &gt;{" "}
+        <span className="text-green-500 dark:text-green-400">
+          sertifikalarım
+        </span>
       </h2>
       <HoverEffect items={certificates} />
     </section>

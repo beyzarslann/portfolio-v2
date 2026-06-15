@@ -10,8 +10,11 @@ const education = [
 export default function Education() {
   return (
     <section className="w-full max-w-2xl mx-auto px-4 sm:px-8 py-6">
-      <h2 className="text-white font-mono text-lg mb-8">
-        ~ &gt; <span className="text-green-400">eğitim geçmişi</span>
+      <h2 className="text-foreground font-mono text-lg mb-4">
+        ~ &gt;{" "}
+        <span className="text-green-500 dark:text-green-400">
+          eğitim geçmişi
+        </span>
       </h2>
 
       <div className="relative">
@@ -21,8 +24,10 @@ export default function Education() {
             <div key={i} className="relative pl-10">
               <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0a0a0a]" />
               <p className="text-gray-500 text-xs font-mono mb-1">{edu.date}</p>
-              <h3 className="text-white font-semibold text-sm">{edu.school}</h3>
-              <p className="text-gray-400 text-sm">{edu.department}</p>
+              <h3 className="text-gray-700 dark:text-gray-300 font-semibold text-sm">
+                {edu.school}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{edu.department}</p>
               <p className="text-gray-500 text-xs font-mono mt-1">{edu.gpa}</p>
             </div>
           ))}

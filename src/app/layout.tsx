@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Contact from "@/components/sections/Contact";
+import { ThemeProvider } from "next-themes";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +29,20 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col pb-24">
-        {children}
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-          <Contact />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          {children}
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+            <Contact />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
