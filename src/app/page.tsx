@@ -10,14 +10,13 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import TerminalSection from "@/components/sections/Terminal";
 import TerminalHero from "@/components/TerminalHero";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const { resolvedTheme } = useTheme();
+  useEffect(() => window.scrollTo(0, 0), []);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -44,20 +43,26 @@ export default function Home() {
         <CvButton />
       </motion.div>
 
-      {[About, Experience, Education, Projects, Certificates, Skills, TerminalSection].map(
-        (Section, i) => (
-          <motion.div
-            key={i}
-            className="w-full"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <Section />
-          </motion.div>
-        ),
-      )}
+      {[
+        About,
+        Experience,
+        Education,
+        Projects,
+        Certificates,
+        Skills,
+        TerminalSection,
+      ].map((Section, i) => (
+        <motion.div
+          key={i}
+          className="w-full"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <Section />
+        </motion.div>
+      ))}
     </main>
   );
 }
