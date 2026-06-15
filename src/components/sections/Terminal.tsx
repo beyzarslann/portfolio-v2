@@ -143,7 +143,6 @@ export default function TerminalSection() {
               }
             }}
             className="bg-transparent outline-none text-foreground flex-1 caret-green-400"
-            autoFocus
             spellCheck={false}
           />
         </div>
