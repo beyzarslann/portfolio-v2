@@ -21,15 +21,19 @@ const links = [
   {
     label: "LinkedIn",
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/beyzarslan",
+    href: "https://www.linkedin.com/in/beyza-arslan-21357a20a/",
   },
   {
     label: "Instagram",
     icon: FaInstagram,
-    href: "https://instagram.com/beyzarslan",
+    href: "https://instagram.com/byzrslnnn",
   },
-  { label: "E-posta", icon: FaEnvelope, href: "mailto:beyzarslan@gmail.com" },
-  { label: "Telefon", icon: FaPhone, href: "tel:+905xxxxxxxxx" },
+  {
+    label: "E-posta",
+    icon: FaEnvelope,
+    href: "mailto:beyzarslan865@gmail.com",
+  },
+  { label: "Telefon", icon: FaPhone, href: "tel:+905078833693" },
   { label: "Bionluk", icon: FaLink, href: "https://bionluk.com/beyzarslannn" },
 ];
 
